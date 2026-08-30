@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tinyy Steps Studio | Newborn, Motherhood &amp; Family Photography, Surat</title>
-<meta name="description" content="Tinyy Steps Studio — a home-styled photography studio in Surat for newborn, motherhood, birthday and family sessions. Every session is customised around you.">
+<meta name="description" content="Tinyy Steps Studio — a home-styled photography studio in Surat specialising in newborn, motherhood, birthday and family portrait sessions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -75,7 +75,8 @@
     white-space:nowrap;display:flex;align-items:center;gap:8px;
   }
   .nav-cta:hover{background:var(--rose-deep);transform:translateY(-2px);}
-  .menu-toggle{display:none;font-size:24px;color:var(--rose-deep);cursor:pointer;background:none;border:none;}
+  .menu-toggle{display:none;color:var(--rose-deep);cursor:pointer;background:none;border:none;}
+  .menu-toggle svg{width:25px;height:25px;display:block;}
 
   /* ---------- Hero ---------- */
   .hero{
@@ -134,6 +135,14 @@
   .polaroid.p2{width:42%;top:6%;right:0;transform:rotate(6deg);z-index:1;}
   .polaroid.p3{width:44%;bottom:0;left:14%;transform:rotate(5deg);z-index:3;}
   .polaroid.p4{width:40%;bottom:4%;right:6%;transform:rotate(-5deg);z-index:2;}
+
+  /* Improved positioning for small screens */
+  @media (max-width:420px){
+    .polaroid.p1{width:50%;top:0;left:0;transform:rotate(-5deg);}
+    .polaroid.p2{width:45%;top:10%;right:0;transform:rotate(3deg);}
+    .polaroid.p3{width:50%;bottom:0;left:0;transform:rotate(2deg);}
+    .polaroid.p4{width:45%;bottom:10%;right:0;transform:rotate(-2deg);}
+  }
   .polaroid:hover{transform:scale(1.06) translateY(-6px) rotate(0deg);box-shadow:0 30px 50px -18px rgba(74,59,53,0.38);z-index:5;}
   .polaroid-caption{
     position:absolute;bottom:12px;left:12px;right:12px;
@@ -182,7 +191,11 @@
   .story-copy p{color:var(--ink-soft);line-height:1.85;font-size:16px;margin-bottom:16px;}
   .story-list{margin-top:26px;display:flex;flex-direction:column;gap:14px;}
   .story-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink);}
-  .story-list .dot{width:26px;height:26px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:13px;}
+  .story-list .dot{width:26px;height:26px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+  .story-list .dot svg{width:17px;height:17px;color:var(--ink);}
+  .story-list .dot.story-dot--sage{background:var(--sage);}
+  .story-list .dot.story-dot--rose{background:var(--blush-deep);}
+  .story-list .dot.story-dot--blush{background:var(--peach);}
 
   /* ---------- Services ---------- */
   .services{background:var(--cream);border-top:1px solid rgba(74,59,53,0.06);}
@@ -192,7 +205,8 @@
     transition:transform .3s, box-shadow .3s;border:1px solid rgba(74,59,53,0.06);
   }
   .service-card:hover{transform:translateY(-8px);box-shadow:0 24px 40px -22px rgba(74,59,53,0.22);}
-  .service-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:22px;}
+  .service-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .service-icon svg{width:30px;height:30px;color:var(--rose-deep);}
   .service-card:nth-child(1) .service-icon{background:var(--peach);}
   .service-card:nth-child(2) .service-icon{background:var(--blush);}
   .service-card:nth-child(3) .service-icon{background:var(--sage);}
@@ -251,7 +265,7 @@
     transition:transform .2s, box-shadow .2s;box-shadow:0 14px 26px -16px rgba(74,59,53,0.3);
   }
   .insta-follow:hover{transform:translateY(-2px);}
-  .insta-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(180px,1fr));gap:16px;}
+  .insta-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(220px,1fr));gap:20px;}
   .insta-tile{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1;background:var(--white);}
   .insta-tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
   .insta-tile:hover img{transform:scale(1.08);}
@@ -396,17 +410,117 @@
     .hero{padding-left:20px;padding-right:20px;}
     .hero h1{font-size:28px;}
     .hero-visual{max-width:250px;}
-    .polaroid-stack{min-height:220px;}
+    .polaroid-stack{min-height:200px;}
     .service-grid{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:repeat(auto-fill, minmax(130px, 1fr));grid-auto-rows:130px;gap:10px;}
+    .gallery-grid{grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));grid-auto-rows:120px;gap:8px;}
     .insta-grid{grid-template-columns:repeat(2,1fr);}
-    .gallery-filters{gap:8px;}
-    .filter-pill{padding:8px 16px;font-size:13px;}
-    footer{padding:48px 20px 24px;}
-    .whatsapp-card{padding:24px 20px;}
-    .story-badge{width:96px;height:96px;font-size:11.5px;}
-    .whatsapp-float{width:50px;height:50px;bottom:calc(16px + env(safe-area-inset-bottom));right:calc(16px + env(safe-area-inset-right));}
-    .whatsapp-float svg{width:24px;height:24px;}
+    .gallery-filters{gap:6px;}
+    .filter-pill{padding:6px 12px;font-size:12px;}
+    footer{padding:40px 16px 20px;}
+    .whatsapp-card{padding:20px 16px;}
+    .story-badge{width:80px;height:80px;font-size:10px;}
+    .whatsapp-float{width:45px;height:45px;bottom:calc(12px + env(safe-area-inset-bottom));right:calc(12px + env(safe-area-inset-right));}
+    .whatsapp-float svg{width:20px;height:20px;}
+    /* Additional polaroid adjustments for very small screens */
+    .polaroid.p1{width:55%;top:0;left:0;transform:rotate(-3deg);}
+    .polaroid.p2{width:50%;top:15%;right:0;transform:rotate(2deg);}
+    .polaroid.p3{width:55%;bottom:0;left:0;transform:rotate(1deg);}
+    .polaroid.p4{width:50%;bottom:15%;right:0;transform:rotate(-1deg);}
+  }
+  @media (max-width:320px){
+    .hero h1{font-size:24px;}
+    .hero p.lede{font-size:14px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .hero-actions a{width:100%;text-align:center;justify-content:center;}
+    .trust-chips{flex-wrap:wrap;justify-content:center;}
+    .story-copy h2{font-size:22px;}
+    .story-copy p{font-size:14px;}
+    .story-list li{font-size:13px;}
+    .section-head h2{font-size:22px;}
+    .section-head p{font-size:14px;}
+    .service-card{h3{font-size:17px;}p{font-size:13px;}}
+    .vision-inner h2{font-size:22px;}
+    .vision-inner p{font-size:14px;}
+    .vision-chip{padding:8px 16px;font-size:12px;}
+    .faq-q{font-size:14px;}
+    .faq-a p{font-size:13px;}
+    .location-copy h2{font-size:22px;}
+    .location-copy p{font-size:14px;}
+    .insta-head h2{font-size:20px;}
+    .insta-head p{font-size:13px;}
+    footer h4{font-size:12px;}
+    footer .footer-grid p{font-size:12px;}
+    footer .footer-grid ul li a{font-size:12px;}
+    .footer-bottom{font-size:11px;}
+    .whatsapp-card h3{font-size:17px;}
+    .whatsapp-card p{font-size:13px;}
+  }
+
+  /* ---------- Trust Chip Icons ---------- */
+  .trust-mark{
+    width:19px;height:19px;flex-shrink:0;
+  }
+  .trust-mark--sage{color:var(--sage-deep);}
+  .trust-mark--rose{color:var(--rose-deep);}
+  .trust-mark--blush{color:var(--blush-deep);}
+
+  /* ---------- Location & Chat Icons ---------- */
+  .location-meta .dot svg{width:17px;height:17px;color:var(--ink);}
+
+  /* ---------- Plus Icon (for FAQ) ---------- */
+  .faq-plus{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-left:8px;
+    flex-shrink:0;
+    transition:transform .25s;
+  }
+  .faq-plus path{
+    fill:var(--ink);
+  }
+  .faq-item.open .faq-plus{
+    transform:rotate(45deg);
+  }
+
+  /* ---------- Baby Icon ---------- */
+  .service-baby{
+    display:inline-block;
+    width:24px;
+    height:24px;
+  }
+  .service-baby path{
+    fill:var(--peach);
+  }
+
+  /* ---------- Motherhood Icon ---------- */
+  .service-motherhood{
+    display:inline-block;
+    width:24px;
+    height:24px;
+  }
+  .service-motherhood path{
+    fill:var(--blush);
+  }
+
+  /* ---------- Birthday Icon ---------- */
+  .service-birthday{
+    display:inline-block;
+    width:24px;
+    height:24px;
+  }
+  .service-birthday path{
+    fill:var(--sage);
+  }
+
+  /* ---------- Family Icon ---------- */
+  .service-family{
+    display:inline-block;
+    width:24px;
+    height:24px;
+  }
+  .service-family path{
+    fill:var(--peach);
   }
 </style>
 </head>
@@ -424,9 +538,9 @@
     </ul>
     <a href="https://wa.me/916352665724" target="_blank" rel="noopener" class="nav-cta">
       <span class="spark"><svg viewBox="0 0 24 24"><path d="M12 2.5c.5 2.6 1.4 4.2 3.6 5.6-2.2 1.4-3.1 3-3.6 5.6-.5-2.6-1.4-4.2-3.6-5.6 2.2-1.4 3.1-3 3.6-5.6z" fill="#fff"/></svg></span>
-      Tell Us Your Vision
+      Enquire Now
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </nav>
 </header>
 
@@ -439,15 +553,15 @@
       Home-styled studio in Surat
     </div>
     <h1>A home for your <em>softest</em><br>little moments</h1>
-    <p class="lede">Tinyy Steps Studio captures newborn, motherhood, birthday and family moments in a space that feels less like a studio, more like home. Every session is shaped around your family — there are no fixed packages, just your vision brought to life.</p>
+    <p class="lede">Tinyy Steps Studio captures newborn, motherhood, birthday and family moments in a space that feels less like a studio, more like home. Each session is thoughtfully planned to reflect your family's story.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/916352665724" target="_blank" rel="noopener" class="btn-primary">Tell Us Your Vision</a>
+      <a href="https://wa.me/916352665724" target="_blank" rel="noopener" class="btn-primary">Enquire Now</a>
       <a href="#gallery" class="btn-ghost">View the gallery</a>
     </div>
     <div class="trust-chips">
-      <div class="trust-chip">🌿 Newborn-safe, unhurried sessions</div>
-      <div class="trust-chip">🏡 Warm, home-styled setups</div>
-      <div class="trust-chip">🎨 Fully customised to you</div>
+      <div class="trust-chip"><svg class="trust-mark trust-mark--sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c8-1 14-7 15-15C11 6 5 12 4 20Z"/><path d="M4 20c2-4 5-7 9-9"/></svg>Newborn-safe, unhurried sessions</div>
+      <div class="trust-chip"><svg class="trust-mark trust-mark--rose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>Warm, home-styled setups</div>
+      <div class="trust-chip"><svg class="trust-mark trust-mark--blush" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c.5 2.6 1.4 4.2 3.6 5.6-2.2 1.4-3.1 3-3.6 5.6-.5-2.6-1.4-4.2-3.6-5.6 2.2-1.4 3.1-3 3.6-5.6z"/></svg>Thoughtfully planned for every family</div>
     </div>
   </div>
   <div class="hero-visual">
@@ -510,9 +624,9 @@
       <p>Tinyy Steps Studio was built on one idea: the best baby photos happen when nobody feels like they're in a studio at all. Soft cushions, warm light, gentle music — we slow everything down until your little one settles in.</p>
       <p>We photograph the quiet, in-between moments — a mother's hand around tiny fingers, a first birthday cake smash, a toddler's shy giggle — and shape every session around what your family actually wants to remember.</p>
       <ul class="story-list">
-        <li><span class="dot">🌿</span>A calm, home-styled space — no harsh lights, no rush</li>
-        <li><span class="dot">🌸</span>Gentle with newborns and nervous toddlers alike</li>
-        <li><span class="dot">🎨</span>No fixed packages — every session is planned around you</li>
+        <li><span class="dot story-dot--sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c8-1 14-7 15-15C11 6 5 12 4 20Z"/><path d="M4 20c2-4 5-7 9-9"/></svg></span>A calm, home-styled space — no harsh lights, no rush</li>
+        <li><span class="dot story-dot--rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-9C.9 7.4 2.7 4 6 4c2 0 3.4 1.1 4 2.4C10.6 5.1 12 4 14 4c3.3 0 5.1 3.4 3.5 7-2.5 4.6-5.5 9-5.5 9Z"/></svg></span>Gentle with newborns and nervous toddlers alike</li>
+        <li><span class="dot story-dot--blush"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c.5 2.6 1.4 4.2 3.6 5.6-2.2 1.4-3.1 3-3.6 5.6-.5-2.6-1.4-4.2-3.6-5.6 2.2-1.4 3.1-3 3.6-5.6z"/></svg></span>Every session is thoughtfully planned around your family</li>
       </ul>
     </div>
   </div>
@@ -527,42 +641,42 @@
     </div>
     <div class="service-grid">
       <div class="service-card">
-        <div class="service-icon">👶</div>
+        <div class="service-icon service-icon--peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="6.5"/><path d="M9 12.5h.01M15 12.5h.01"/><path d="M9.5 16c1 1 4 1 5 0"/><path d="M8 7c1-1.5 2.5-2 4-2s3 .5 4 2"/></svg></div>
         <h3>Newborn</h3>
         <p>Gentle, in-home-styled sessions for your baby's earliest days — posed safely and slowly.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🤰</div>
+        <div class="service-icon service-icon--blush"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9.5-9C.9 7.4 2.7 4 6 4c2 0 3.4 1.1 4 2.4C10.6 5.1 12 4 14 4c3.3 0 5.1 3.4 3.5 7-2.5 4.6-5.5 9-5.5 9Z"/></svg></div>
         <h3>Motherhood</h3>
         <p>Soft, intimate portraits that honour the season of pregnancy and new motherhood.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">🎂</div>
+        <div class="service-icon service-icon--sage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7"/><path d="M4 21h16"/><path d="M4 17h16"/><path d="M9 12V8"/><circle cx="9" cy="6" r="1.6"/></svg></div>
         <h3>Birthday</h3>
         <p>Playful, picnic-style birthday sessions that capture real giggles, not stiff poses.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">👨‍👩‍👧</div>
+        <div class="service-icon service-icon--peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="2.2"/><circle cx="17" cy="8" r="2.2"/><circle cx="12" cy="7" r="1.7"/><path d="M3 20v-2c0-2 1.8-3.5 4-3.5s4 1.5 4 3.5v2"/><path d="M13 20v-2c0-2 1.8-3.5 4-3.5s4 1.5 4 3.5v2"/><path d="M10 20v-1.3c0-1.5 1-2.7 2-2.7s2 1.2 2 2.7V20"/></svg></div>
         <h3>Family</h3>
         <p>Relaxed, candid family sessions that capture how you actually love each other.</p>
       </div>
     </div>
-    <p class="services-note">Every session is completely customised around your family — themes, props and setups are planned together with you, not picked from a fixed menu.</p>
+    <p class="services-note">We work closely with every family to plan themes, props and setups that reflect the moment you want to remember.</p>
   </div>
 </section>
 
 <section class="vision">
   <div class="wrap">
     <div class="vision-inner">
-      <div class="eyebrow" style="justify-content:center;">Create Your Perfect Session</div>
-      <h2>Tell us your vision</h2>
-      <p>No two families are the same, so we don't believe in fixed packages. Tell us what you're imagining — the mood, the theme, the moment you want to hold onto — and we'll shape a session around it.</p>
+      <div class="eyebrow" style="justify-content:center;">Book Your Session</div>
+      <h2>Let's plan your session</h2>
+      <p>Every family has a different story to tell. Share the occasion and your preferred dates with us, and we'll guide you through planning a session built around your family.</p>
       <div class="vision-chips">
         <button class="vision-chip" data-msg="Hi! I'd love to enquire about a Newborn session.">Newborn session</button>
         <button class="vision-chip" data-msg="Hi! I'd love to enquire about a Motherhood session.">Motherhood session</button>
         <button class="vision-chip" data-msg="Hi! I'd love to enquire about a Birthday session.">Birthday session</button>
         <button class="vision-chip" data-msg="Hi! I'd love to enquire about a Family session.">Family session</button>
-        <button class="vision-chip" data-msg="Hi! I have a custom idea I'd love to discuss for a session.">Something custom</button>
+        <button class="vision-chip" data-msg="Hi! I'd like to get in touch about a session.">Other enquiries</button>
       </div>
       <a href="https://wa.me/916352665724" target="_blank" rel="noopener" class="btn-primary" id="visionCta">Start the conversation on WhatsApp</a>
     </div>
@@ -645,16 +759,25 @@
       </a>
     </div>
     <div class="insta-grid">
+      <!-- Instagram feed - add your images to images/instagram/ folder as instagram01.jpg through instagram05.jpg -->
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/newborn/newborn01.jpg" alt="Newborn session shared on Instagram">
+        <img src="images/instagram/instagram01.jpg" alt="Instagram post">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/birthday/birthday01.jpg" alt="Birthday session shared on Instagram">
+        <img src="images/instagram/instagram02.jpg" alt="Instagram post">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/birthday/birthday02.jpg" alt="Birthday session shared on Instagram">
+        <img src="images/instagram/instagram03.jpg" alt="Instagram post">
+        <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
+      </a>
+      <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
+        <img src="images/instagram/instagram04.jpg" alt="Instagram post">
+        <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
+      </a>
+      <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
+        <img src="images/instagram/instagram05.jpg" alt="Instagram post">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
     </div>
@@ -674,8 +797,8 @@
         <div class="faq-a"><p>Message us on WhatsApp or Instagram with a bit about what you're imagining — the occasion, the mood, and your preferred dates. We'll talk through the details together and confirm your session from there.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Do you offer fixed packages or pricing? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>We don't work off a fixed price list. Every session is customised to your family's needs, so we discuss details and share pricing directly with you once we understand your vision.</p></div>
+        <button class="faq-q">How is pricing determined? <span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>Pricing depends on the type of session and your specific requirements. Message us with a few details about what you have in mind, and we'll share the relevant pricing with you directly.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">What should we wear or bring? <span class="faq-icon">+</span></button>
@@ -700,8 +823,8 @@
       <h2>Visit our studio in Surat</h2>
       <p>Tinyy Steps Studio is based in Surat, Gujarat. Message us for exact directions, parking details and to schedule your visit.</p>
       <div class="location-meta">
-        <div><span class="dot">📍</span>Surat, Gujarat, India</div>
-        <div><span class="dot">💬</span>Enquire on WhatsApp for exact address &amp; timings</div>
+        <div><span class="dot location-dot--peach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg></span>Surat, Gujarat, India</div>
+        <div><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4A9 9 0 0 1 3 20l.6-3A8.4 8.4 0 1 1 21 11.5Z"/></svg></span>Enquire on WhatsApp for exact address &amp; timings</div>
       </div>
       <a href="https://share.google/JdHXtKFKVaOAJtNhf" target="_blank" rel="noopener" class="btn-ghost">Get directions</a>
     </div>
@@ -768,7 +891,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 Tinyy Steps Studio. All rights reserved.</span>
+    <span>&copy; 2026 Tinyy Steps Studio. All rights reserved. Bookings by appointment only.</span>
     <div class="footer-social">
       <a href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
     </div>
@@ -813,14 +936,20 @@
 (function(){
   var toggle = document.getElementById('menuToggle');
   var links = document.getElementById('navLinks');
+  var iconMenu = toggle.querySelector('.icon-menu');
+  var iconClose = toggle.querySelector('.icon-close');
+  function setIcon(open){
+    iconMenu.style.display = open ? 'none' : 'block';
+    iconClose.style.display = open ? 'block' : 'none';
+  }
   toggle.addEventListener('click', function(){
     links.classList.toggle('open');
-    toggle.textContent = links.classList.contains('open') ? '✕' : '☰';
+    setIcon(links.classList.contains('open'));
   });
   links.querySelectorAll('a').forEach(function(link){
     link.addEventListener('click', function(){
       links.classList.remove('open');
-      toggle.textContent = '☰';
+      setIcon(false);
     });
   });
 })();
