@@ -4,7 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tinyy Steps Studio | Newborn, Motherhood &amp; Family Photography, Surat</title>
-<meta name="description" content="Tinyy Steps Studio — a home-styled photography studio in Surat specialising in newborn, motherhood, birthday and family portrait sessions.">
+<meta name="description" content="Tinyy Steps Studio — a home-styled newborn, maternity, birthday and family photography studio in Surat, Gujarat. Rated 4.9★ on Google. Book your session on WhatsApp today.">
+<meta name="keywords" content="newborn photography Surat, baby photoshoot Surat, maternity photography Surat, pregnancy photoshoot Surat, birthday photoshoot Surat, family photography Surat, best photography studio Surat, home styled newborn shoot, baby photographer near me, kids photography studio Surat, Adajan photography studio, cake smash photoshoot Surat, newborn photographer Gujarat">
+<link rel="canonical" href="https://tinyystepsstudio.com/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tinyy Steps Studio">
+<meta property="og:title" content="Tinyy Steps Studio | Newborn, Motherhood & Family Photography, Surat">
+<meta property="og:description" content="Home-styled newborn, maternity, birthday and family photography studio in Surat, Gujarat. Rated 4.9★ on Google.">
+<meta property="og:image" content="https://tinyystepsstudio.com/images/hero/polaroid1.jpg">
+<meta property="og:url" content="https://tinyystepsstudio.com/">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tinyy Steps Studio | Newborn, Motherhood & Family Photography, Surat">
+<meta name="twitter:description" content="Home-styled newborn, maternity, birthday and family photography studio in Surat, Gujarat. Rated 4.9★ on Google.">
+<meta name="twitter:image" content="https://tinyystepsstudio.com/images/hero/polaroid1.jpg">
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://tinyystepsstudio.com/#business",
+  "name": "Tinyy Steps Studio",
+  "alternateName": "Tiny Steps Newborn Photography",
+  "image": "https://tinyystepsstudio.com/images/hero/polaroid1.jpg",
+  "logo": "https://tinyystepsstudio.com/images/logo-light.png",
+  "description": "Home-styled photography studio in Surat specialising in newborn, maternity, birthday and family portrait sessions.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20, The Gallaeria, near Sanjeev Kumar Auditorium Rd, Adajan Gam",
+    "addressLocality": "Surat",
+    "addressRegion": "Gujarat",
+    "postalCode": "394510",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "21.1959",
+    "longitude": "72.7933"
+  },
+  "telephone": "+91-6352665724",
+  "url": "https://tinyystepsstudio.com/",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.instagram.com/tinyysteps_studio/"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "617"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "19:00"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,8 +80,10 @@
     --sage-deep:#B9CBA9;
     --rose:#C98C86;
     --rose-deep:#A9635E;
+    --rose-darker:#8F544F;
     --ink:#4A3B35;
     --ink-soft:#7A6A62;
+    --ink-soft-deep:#675A53;
     --white:#FFFFFF;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -43,8 +107,29 @@
   .wrap{max-width:1320px;margin:0 auto;padding:0 32px;}
   ::selection{background:var(--blush-deep);color:var(--white);}
 
+  /* ---------- Accessibility: skip link ---------- */
+  .skip-link{
+    position:absolute;top:-100px;left:12px;z-index:9999;
+    background:var(--rose-deep);color:var(--white);
+    padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{top:12px;}
+
+  /* ---------- Accessibility: focus states ---------- */
+  a:focus-visible,
+  button:focus-visible,
+  .filter-pill:focus-visible,
+  .vision-chip:focus-visible,
+  .faq-q:focus-visible,
+  .gallery-grid div:focus-visible{
+    outline:2px solid var(--rose-deep);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
   /* ---------- Sparkle motif ---------- */
-  .spark{display:inline-block;width:15px;height:15px;position:relative;flex-shrink:0;}
+  .spark{display:inline-block;width:12px;height:12px;position:relative;flex-shrink:0;}
   .spark svg{width:100%;height:100%;fill:var(--rose);}
 
   /* ---------- Nav ---------- */
@@ -68,13 +153,13 @@
   }
   .nav-links a:hover::after{width:100%;}
   .nav-cta{
-    background:var(--rose);color:var(--white);
+    background:var(--rose-deep);color:var(--white);
     padding:11px 22px;border-radius:30px;
     font-size:14px;font-weight:600;
     transition:background .25s, transform .25s;
     white-space:nowrap;display:flex;align-items:center;gap:8px;
   }
-  .nav-cta:hover{background:var(--rose-deep);transform:translateY(-2px);}
+  .nav-cta:hover{background:var(--rose-darker);transform:translateY(-2px);}
   .menu-toggle{display:none;color:var(--rose-deep);cursor:pointer;background:none;border:none;}
   .menu-toggle svg{width:25px;height:25px;display:block;}
 
@@ -95,18 +180,18 @@
     font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
     color:var(--rose-deep);font-weight:600;margin-bottom:18px;
   }
-  .hero h1{font-size:52px;line-height:1.12;color:var(--ink);margin-bottom:22px;}
+  .hero h1{font-size:56px;line-height:1.05;color:var(--ink);margin-bottom:28px;text-shadow:0 1px 2px rgba(0,0,0,0.05);}
   .hero h1 em{font-style:italic;color:var(--rose-deep);font-weight:500;}
-  .hero p.lede{font-size:17px;line-height:1.75;color:var(--ink-soft);max-width:470px;margin-bottom:32px;}
+  .hero p.lede{font-size:17px;line-height:1.75;color:var(--ink-soft);max-width:470px;margin-bottom:38px;}
   .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
   .btn-primary{
-    background:var(--rose);color:var(--white);
+    background:var(--rose-deep);color:var(--white);
     padding:15px 30px;border-radius:32px;font-weight:600;font-size:15px;
     transition:background .25s, transform .25s;
     box-shadow:0 10px 24px -12px rgba(169,99,94,0.55);
     display:inline-flex;align-items:center;gap:8px;
   }
-  .btn-primary:hover{background:var(--rose-deep);transform:translateY(-2px);}
+  .btn-primary:hover{background:var(--rose-darker);transform:translateY(-2px);}
   .btn-ghost{
     border:1.5px solid var(--sage-deep);color:var(--ink);
     padding:14px 28px;border-radius:32px;font-weight:600;font-size:15px;
@@ -119,7 +204,7 @@
   .trust-chip{
     display:flex;align-items:center;gap:8px;
     background:var(--white);border:1px solid rgba(169,99,94,0.16);
-    padding:9px 16px;border-radius:30px;font-size:13.5px;color:var(--ink-soft);font-weight:600;
+    padding:10px 18px;border-radius:30px;font-size:13.5px;color:var(--ink-soft);font-weight:600;
   }
 
   .hero-visual{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;}
@@ -154,9 +239,44 @@
     background:var(--sage);padding:16px 0;overflow:hidden;
     border-top:1px solid rgba(74,59,53,0.06);border-bottom:1px solid rgba(74,59,53,0.06);
   }
-  .marquee-track{display:flex;gap:52px;white-space:nowrap;animation:scroll-left 52s linear infinite;width:max-content;will-change:transform;}
-  .marquee-track span{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#4E5C3E;display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .marquee-track{display:flex;gap:48px;white-space:nowrap;animation:scroll-left 60s linear infinite;width:max-content;will-change:transform;}
+  .marquee-track span{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#4E5C3E;display:flex;align-items:center;gap:10px;flex-shrink:0;letter-spacing:0.5px;}
   @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @keyframes newborn-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  /* Target Newborn instances in marquee with staggered delay */
+  .marquee-track span:nth-child(1) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  .marquee-track span:nth-child(5) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+  .marquee-track span:nth-child(9) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  .marquee-track span:nth-child(13) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+  .marquee-track span:nth-child(17) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  .marquee-track span:nth-child(21) {
+    transform: translateY(-2px);
+    animation: newborn-bounce 2s ease-in-out infinite;
+    animation-delay: 2.5s;
+  }
 
   /* ---------- Section shared ---------- */
   section{padding:100px 0;position:relative;}
@@ -169,7 +289,7 @@
   .story{background:var(--white);position:relative;border-top:1px solid rgba(74,59,53,0.06);}
   .story-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;}
   .story-visual{position:relative;}
-  .story-frame{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1/1.05;background:var(--peach);box-shadow:0 30px 60px -30px rgba(74,59,53,0.3);}
+  .story-frame{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1.05;background:var(--peach);box-shadow:0 30px 60px -30px rgba(74,59,53,0.3);}
   .story-frame img{width:100%;height:100%;object-fit:cover;}
   .story-accent{
     position:absolute;left:-8%;bottom:-12%;width:46%;aspect-ratio:4/5;
@@ -181,10 +301,10 @@
   .story-accent img{width:100%;height:100%;object-fit:cover;border-radius:3px;}
   .story-badge{
     position:absolute;bottom:-20px;right:-20px;
-    background:var(--rose);color:var(--white);
-    width:118px;height:118px;border-radius:50%;
+    background:var(--rose-deep);color:var(--white);
+    width:126px;height:126px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;
-    font-family:'Fraunces',serif;font-style:italic;font-size:13px;line-height:1.35;padding:10px;
+    font-family:'Fraunces',serif;font-style:italic;font-size:14px;line-height:1.35;padding:10px;
     box-shadow:0 14px 30px -14px rgba(169,99,94,0.6);z-index:3;
   }
   .story-copy h2{font-size:34px;line-height:1.25;margin-bottom:20px;color:var(--ink);}
@@ -245,7 +365,7 @@
     transition:background .25s, color .25s, border-color .25s;
   }
   .filter-pill:hover{background:var(--sage);color:var(--ink);}
-  .filter-pill.active{background:var(--rose);border-color:var(--rose);color:var(--white);}
+  .filter-pill.active{background:var(--rose-deep);border-color:var(--rose-deep);color:var(--white);}
   .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));grid-auto-rows:170px;gap:14px;}
   .gallery-grid div{border-radius:16px;overflow:hidden;background:var(--sage);cursor:pointer;}
   .gallery-grid div.missing{display:none !important;}
@@ -289,13 +409,13 @@
   .faq-q .faq-icon{font-size:20px;color:var(--rose-deep);transition:transform .3s;flex-shrink:0;}
   .faq-item.open .faq-q .faq-icon{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .faq-a p{padding:0 24px 20px;font-size:14.5px;color:var(--ink-soft);line-height:1.75;}
+  .faq-a p{padding:0 24px 20px;font-size:14.5px;color:var(--ink-soft-deep);line-height:1.75;}
 
   /* ---------- Location ---------- */
-  .location{background:var(--peach);border-top:1px solid rgba(74,59,53,0.06);}
+  .location{background:var(--sage);border-top:1px solid rgba(74,59,53,0.06);}
   .location-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:stretch;}
   .location-copy h2{font-size:32px;color:var(--ink);margin-bottom:16px;}
-  .location-copy p{color:var(--ink-soft);font-size:15.5px;line-height:1.8;margin-bottom:26px;max-width:420px;}
+  .location-copy p{color:var(--ink-soft-deep);font-size:15.5px;line-height:1.8;margin-bottom:26px;max-width:420px;}
   .location-meta{display:flex;flex-direction:column;gap:16px;margin-bottom:30px;}
   .location-meta div{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:var(--ink);}
   .location-meta .dot{width:26px;height:26px;border-radius:50%;background:var(--peach);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;}
@@ -304,7 +424,7 @@
 
   /* ---------- Contact / WhatsApp ---------- */
   .cta-section{
-    background:var(--sage);border-radius:32px;margin:0 32px;padding:64px 50px;
+    background:var(--peach);border-radius:32px;margin:0 32px;padding:64px 50px;
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;
     max-width:1256px;margin-left:auto;margin-right:auto;
   }
@@ -334,7 +454,124 @@
   .whatsapp-float:hover{transform:scale(1.08);}
   .whatsapp-float svg{width:28px;height:28px;fill:var(--white);}
 
-  /* ---------- Footer ---------- */
+  /* ---------- Reviews Section ---------- */
+.reviews{
+  background:var(--white);
+  border-top:1px solid rgba(74,59,53,0.06);
+}
+.reviews-slider{
+  overflow:hidden;
+  padding:20px 0;
+  margin-bottom:24px;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+.reviews-track{
+  display:flex;
+  gap:18px;
+  width:max-content;
+  animation:reviews-scroll 45s linear infinite;
+}
+.reviews-slider:hover .reviews-track{
+  animation-play-state:paused;
+}
+@keyframes reviews-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.review-slide{
+  width:220px;
+  flex-shrink:0;
+  background:var(--cream);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 4px 12px -4px rgba(74,59,53,0.08);
+}
+.review-text{
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+  font-style:italic;
+  position:relative;
+  display:-webkit-box;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.review-author{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.review-author-avatar{
+  width:30px;
+  height:30px;
+  background:var(--sage);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  color:var(--white);
+  font-size:12px;
+  flex-shrink:0;
+}
+.review-author-details h4{
+  margin:0 0 2px 0;
+  font-size:14px;
+  color:var(--ink);
+  font-weight:600;
+}
+.review-rating{
+  color:var(--rose-deep);
+  display:flex;
+  gap:2px;
+}
+.star{width:15px;height:15px;flex-shrink:0;}
+.reviews-footer{
+  text-align:center;
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid rgba(74,59,53,0.06);
+}
+.reviews-summary{
+  font-size:15px;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+/* ---------- Responsive for Reviews ---------- */
+@media (max-width:680px){
+  .reviews-track{
+    gap:14px;
+    animation-duration:35s;
+  }
+  .review-slide{
+    width:190px;
+    padding:16px;
+  }
+  .review-text{
+    font-size:13px;
+  }
+}
+@media (max-width:420px){
+  .reviews-track{
+    gap:12px;
+    animation-duration:28s;
+  }
+  .review-slide{
+    width:170px;
+    padding:14px;
+  }
+  .review-text{
+    font-size:12.5px;
+    -webkit-line-clamp:4;
+  }
+}
+
+/* ---------- Footer ---------- */
   footer{background:var(--ink);color:#F5EBE3;padding:70px 32px 30px;}
   .footer-grid{
     max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;
@@ -458,7 +695,7 @@
 
   /* ---------- Trust Chip Icons ---------- */
   .trust-mark{
-    width:19px;height:19px;flex-shrink:0;
+    width:12px;height:12px;flex-shrink:0;
   }
   .trust-mark--sage{color:var(--sage-deep);}
   .trust-mark--rose{color:var(--rose-deep);}
@@ -526,24 +763,27 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header>
   <nav>
-    <a href="#" class="logo"><img src="images/logo-light.png" alt="Tinyy Steps Studio logo"></a>
+    <a href="#" class="logo"><img src="images/logo-light.png" alt="Tinyy Steps Studio logo" loading="lazy"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#story">Our Story</a></li>
       <li><a href="#sessions">Sessions</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#location">Location</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="https://wa.me/916352665724" target="_blank" rel="noopener" class="nav-cta">
-      <span class="spark"><svg viewBox="0 0 24 24"><path d="M12 2.5c.5 2.6 1.4 4.2 3.6 5.6-2.2 1.4-3.1 3-3.6 5.6-.5-2.6-1.4-4.2-3.6-5.6 2.2-1.4 3.1-3 3.6-5.6z" fill="#fff"/></svg></span>
       Enquire Now
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open main menu" aria-expanded="false" aria-controls="navLinks"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none;"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </nav>
 </header>
 
+<main id="main-content">
 <section class="hero">
   <div class="hero-blob blob-1"></div>
   <div class="hero-blob blob-2"></div>
@@ -567,19 +807,19 @@
   <div class="hero-visual">
     <div class="polaroid-stack">
       <div class="polaroid p1">
-        <img src="images/hero/polaroid1.jpg" alt="Newborn baby resting softly in a knit wrap">
+        <img src="images/hero/polaroid1.jpg" alt="Newborn baby resting softly in a knit wrap" loading="lazy">
         <div class="polaroid-caption">tiny steps, big love</div>
       </div>
       <div class="polaroid p2">
-        <img src="images/hero/polaroid2.jpg" alt="Little girl smiling shyly at her outdoor picnic session">
+        <img src="images/hero/polaroid2.jpg" alt="Little girl smiling shyly at her outdoor picnic session" loading="lazy">
         <div class="polaroid-caption">little smiles</div>
       </div>
       <div class="polaroid p3">
-        <img src="images/hero/polaroid3.jpg" alt="Toddler laughing at her birthday picnic session">
+        <img src="images/hero/polaroid3.jpg" alt="Toddler laughing at her birthday picnic session" loading="lazy">
         <div class="polaroid-caption">three scoops of fun</div>
       </div>
       <div class="polaroid p4">
-        <img src="images/hero/polaroid4.jpg" alt="Family session moment">
+        <img src="images/hero/polaroid4.jpg" alt="Family session moment" loading="lazy">
         <div class="polaroid-caption">home, always</div>
       </div>
     </div>
@@ -611,11 +851,11 @@
   <div class="wrap story-grid">
     <div class="story-visual">
       <div class="story-frame">
-        <img src="images/story/story-photo.jpg" alt="Behind the scenes at Tinyy Steps Studio">
+        <img src="images/story/story-photo.jpg" alt="Behind the scenes at Tinyy Steps Studio" loading="lazy">
         <div class="story-badge">Home-<br>styled<br>studio</div>
       </div>
       <div class="story-accent">
-        <img src="images/story/story-accent.jpg" alt="A quiet moment at Tinyy Steps Studio">
+        <img src="images/story/story-accent.jpg" alt="A quiet moment at Tinyy Steps Studio" loading="lazy">
       </div>
     </div>
     <div class="story-copy">
@@ -698,46 +938,46 @@
       <button class="filter-pill" data-filter="family">Family</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
-      <div data-category="newborn"><img src="images/newborn/newborn01.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn02.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn03.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn04.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn05.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn06.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn07.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn08.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn09.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn"><img src="images/newborn/newborn10.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood01.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood02.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood03.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood04.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood05.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood06.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood07.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood08.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood09.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood"><img src="images/motherhood/motherhood10.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday01.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday02.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday03.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday04.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday05.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday06.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday07.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday08.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday09.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday"><img src="images/birthday/birthday10.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family01.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family02.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family03.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family04.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family05.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family06.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family07.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family08.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family09.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family"><img src="images/family/family10.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn01.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn02.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn03.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn04.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn05.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn06.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn07.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn08.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn09.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn10.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood01.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood02.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood03.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood04.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood05.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood06.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood07.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood08.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood09.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood10.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday01.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday02.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday03.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday04.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday05.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday06.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday07.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday08.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday09.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday10.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family01.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family02.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family03.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family04.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family05.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family06.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family07.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family08.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family09.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family10.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
     </div>
     <p class="gallery-empty" id="galleryEmpty" style="display:none;">More photos from this category are coming soon — follow us on Instagram to see the latest sessions.</p>
     <div class="gallery-cta">
@@ -784,11 +1024,207 @@
   </div>
 </section>
 
+<!-- Reviews Section -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What families say</div>
+      <h2>Heartfelt reviews from our clients</h2>
+      <p>We're honored to have served countless families in Surat and beyond. Here's what they're saying about their experience with Tinyy Steps Studio.</p>
+    </div>
+    <div class="reviews-slider" id="reviewsSlider">
+      <div class="reviews-track" id="reviewsTrack">
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"Amazing experience with Tiny Steps ❤️ The team was super patient and friendly with our baby, and the photos came out beautiful. Every picture feels so natural and full of emotions. Really happy with the overall experience. Highly recommended for baby photoshoots"</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">A</div>
+              <div class="review-author-details">
+                <h4>Ankesh</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"I recently had my baby’s photoshoot at Tinyy Steps Studio, and it was such a heartwarming experience. The team was very patient and gentle, making sure my baby felt safe and comfortable throughout the session. They handled everything with care and professionalism."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">A</div>
+              <div class="review-author-details">
+                <h4>Anuj Kumar Yadav</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"We had an amazing newborn photoshoot at our home, and the entire experience was wonderful. The photographer was patient, gentle with our baby, and made us feel completely comfortable. The photos turned out beautiful and captured such precious moments we'll cherish forever."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">M</div>
+              <div class="review-author-details">
+                <h4>Manav Bardoliya</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"We had an amazing experience with Tiny Steps for our baby’s photography and videography. They were incredibly sweet, patient, and professional. The photos turned out absolutely beautiful and were delivered on time. We will definitely be coming back for future family sessions!"</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">V</div>
+              <div class="review-author-details">
+                <h4>Vandana Rathod</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"I really liked the photography experience. They handled the baby with great care and cooperated with us throughout the session. The studio is very clean and has very positive vibes that made us feel at ease."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">A</div>
+              <div class="review-author-details">
+                <h4>Abhishek Parikh</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"Had a wonderful experience with the newborn baby shoot at this studio. The team was extremely patient, gentle, and professional while handling the baby, which made us feel very comfortable. The setup, props, and overall ambiance were perfect for capturing those first moments."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">M</div>
+              <div class="review-author-details">
+                <h4>Mansi Mody</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"We had the most amazing experience with Tinyy Steps studio. The team was so gentle and friendly with our little one, and they captured the cutest moments perfectly. The photos turned out absolutely beautiful that we will cherish forever. Highly recommended for any parents who wants to preserve their baby's moments."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">P</div>
+              <div class="review-author-details">
+                <h4>Parth Raghavani</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">'"We recently had a baby photoshoot for my son at Tinyy Steps Studio📸📷, and I must say it was an absolutely wonderful experience! From the moment we walked in, the atmosphere was very welcoming and baby-friendly, which made my little one feel at ease."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">N</div>
+              <div class="review-author-details">
+                <h4>Nidhi Panchal</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"Had a lovely experience at Tinyy Steps Photo Studio! The team was patient, friendly, and made the entire shoot feel comfortable and fun. The photos turned out beautiful and very natural. Highly recommend them for capturing special moments ✨"</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">H</div>
+              <div class="review-author-details">
+                <h4>Hetanshi Shah</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"Thank you so much for beautifully capturing our baby’s first birthday—it’s such a special milestone for us, and you’ve preserved it perfectly. We absolutely loved the photos; the moments, expressions, and little details are just priceless."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">S</div>
+              <div class="review-author-details">
+                <h4>Shreyansh Mehta</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-content">
+          <p class="review-text">"We had an incredible experience! The photographer was incredibly patient and gentle with our little one, making the entire session stress-free. Highly recommended for anyone looking to capture those precious early moments."</p>
+          <div class="review-author">
+            <div class="review-author-info">
+              <div class="review-author-avatar">P</div>
+              <div class="review-author-details">
+                <h4>Preet Gabani</h4>
+                <div class="review-rating">
+                  <span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span><span class="star"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.7 1.2 6.6L12 17.9l-5.9 3.1 1.2-6.6-4.8-4.7 6.6-.9L12 2.5z"/></svg></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="reviews-footer">
+      <p class="reviews-summary">4.9★ average rating from 617+ Google reviews</p>
+      <a href="https://g.page/r/CbUhYlsAoq82EAE/review"
+         class="btn-primary" target="_blank" rel="noopener">Leave a Review on Google</a>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Good to know</div>
-      <h2>Frequently asked questions</h2>
+      <h2>Frequently asked questions</h>
       <p>Have a question that's not here? Just message us on WhatsApp — we're happy to walk you through it.</p>
     </div>
     <div class="faq-list">
@@ -856,6 +1292,7 @@
     </a>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-grid">
@@ -903,7 +1340,7 @@
 </a>
 
 <div id="lightbox">
-  <button class="lb-close" aria-label="Close">✕</button>
+  <button class="lb-close" aria-label="Close photo viewer">✕</button>
   <button class="lb-prev" aria-label="Previous photo">‹</button>
   <img src="" alt="">
   <button class="lb-next" aria-label="Next photo">›</button>
@@ -941,6 +1378,8 @@
   function setIcon(open){
     iconMenu.style.display = open ? 'none' : 'block';
     iconClose.style.display = open ? 'block' : 'none';
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close main menu' : 'Open main menu');
   }
   toggle.addEventListener('click', function(){
     links.classList.toggle('open');
@@ -1006,7 +1445,15 @@ function initLightbox(allItems){
     counter.textContent = (currentIndex + 1) + ' of ' + vis.length;
     lightbox.classList.add('open');
   }
-  allItems.forEach(function(item){ item.addEventListener('click', function(){ openAt(item); }); });
+  allItems.forEach(function(item){
+    item.addEventListener('click', function(){ openAt(item); });
+    item.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openAt(item);
+      }
+    });
+  });
   closeBtn.addEventListener('click', function(){ lightbox.classList.remove('open'); });
   lightbox.addEventListener('click', function(e){ if(e.target === lightbox) lightbox.classList.remove('open'); });
   prevBtn.addEventListener('click', function(){ var vis = visibleItems(); currentIndex = (currentIndex - 1 + vis.length) % vis.length; show(vis); });
@@ -1049,6 +1496,13 @@ function initLightbox(allItems){
       chip.style.background = 'var(--sage)';
     });
   });
+})();
+
+(function(){
+  var track = document.getElementById('reviewsTrack');
+  if (track) {
+    track.innerHTML += track.innerHTML;
+  }
 })();
 </script>
 
