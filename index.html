@@ -370,7 +370,7 @@
   .filter-pill:hover{background:var(--sage);color:var(--ink);}
   .filter-pill.active{background:var(--rose-deep);border-color:var(--rose-deep);color:var(--white);}
   .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));grid-auto-rows:170px;gap:14px;}
-  .gallery-grid div{border-radius:16px;overflow:hidden;background:var(--sage);cursor:pointer;}
+  .gallery-grid div{border-radius:16px;overflow:hidden;background:var(--sage);cursor:pointer;content-visibility:auto;contain-intrinsic-size:170px;}
   .gallery-grid div.missing{display:none !important;}
   .gallery-grid div img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
   .gallery-grid div:hover img{transform:scale(1.08);}
