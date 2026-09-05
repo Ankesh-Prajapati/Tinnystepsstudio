@@ -71,6 +71,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/hero/polaroid1.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -389,6 +390,7 @@
   .insta-follow:hover{transform:translateY(-2px);}
   .insta-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(220px,1fr));gap:20px;}
   .insta-tile{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:1/1;background:var(--white);}
+  .insta-tile.missing{display:none;}
   .insta-tile img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
   .insta-tile:hover img{transform:scale(1.08);}
   .insta-tile .insta-badge{
@@ -773,7 +775,7 @@
 
 <header>
   <nav>
-    <a href="#" class="logo"><img src="images/logo-light.png" alt="Tinyy Steps Studio logo" loading="lazy"></a>
+    <a href="#" class="logo"><img src="images/logo-light.png" alt="Tinyy Steps Studio logo" loading="eager" fetchpriority="high" decoding="async"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#story">Our Story</a></li>
       <li><a href="#sessions">Sessions</a></li>
@@ -813,19 +815,19 @@
   <div class="hero-visual">
     <div class="polaroid-stack">
       <div class="polaroid p1">
-        <img src="images/hero/polaroid1.jpg" alt="Newborn baby resting softly in a knit wrap" loading="lazy">
+        <img src="images/hero/polaroid1.jpg" alt="Newborn baby resting softly in a knit wrap" loading="eager" fetchpriority="high" decoding="async">
         <div class="polaroid-caption">tiny steps, big love</div>
       </div>
       <div class="polaroid p2">
-        <img src="images/hero/polaroid2.jpg" alt="Little girl smiling shyly at her outdoor picnic session" loading="lazy">
+        <img src="images/hero/polaroid2.jpg" alt="Little girl smiling shyly at her outdoor picnic session" loading="eager" fetchpriority="high" decoding="async">
         <div class="polaroid-caption">little smiles</div>
       </div>
       <div class="polaroid p3">
-        <img src="images/hero/polaroid3.jpg" alt="Toddler laughing at her birthday picnic session" loading="lazy">
+        <img src="images/hero/polaroid3.jpg" alt="Toddler laughing at her birthday picnic session" loading="eager" decoding="async">
         <div class="polaroid-caption">three scoops of fun</div>
       </div>
       <div class="polaroid p4">
-        <img src="images/hero/polaroid4.jpg" alt="Family session moment" loading="lazy">
+        <img src="images/hero/polaroid4.jpg" alt="Family session moment" loading="eager" decoding="async">
         <div class="polaroid-caption">home, always</div>
       </div>
     </div>
@@ -857,11 +859,11 @@
   <div class="wrap story-grid">
     <div class="story-visual">
       <div class="story-frame">
-        <img src="images/story/story-photo.jpg" alt="Behind the scenes at Tinyy Steps Studio" loading="lazy">
+        <img src="images/story/story-photo.jpg" alt="Behind the scenes at Tinyy Steps Studio" loading="lazy" decoding="async">
         <div class="story-badge">Home-<br>styled<br>studio</div>
       </div>
       <div class="story-accent">
-        <img src="images/story/story-accent.jpg" alt="A quiet moment at Tinyy Steps Studio" loading="lazy">
+        <img src="images/story/story-accent.jpg" alt="A quiet moment at Tinyy Steps Studio" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="story-copy">
@@ -942,48 +944,59 @@
       <button class="filter-pill" data-filter="birthday">Birthday</button>
       <button class="filter-pill" data-filter="motherhood">Motherhood</button>
       <button class="filter-pill" data-filter="family">Family</button>
+      <button class="filter-pill" data-filter="outdoor">Outdoor</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn01.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn02.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn03.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn04.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn05.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn06.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn07.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn08.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn09.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn10.jpg" alt="Newborn baby session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood01.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood02.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood03.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood04.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood05.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood06.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood07.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood08.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood09.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood10.jpg" alt="Motherhood session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday01.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday02.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday03.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday04.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday05.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday06.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday07.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday08.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday09.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday10.jpg" alt="Birthday session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family01.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family02.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family03.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family04.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family05.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family06.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family07.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family08.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family09.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
-      <div data-category="family" role="button" tabindex="0"><img src="images/family/family10.jpg" alt="Family session — Tinyy Steps Studio" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn01.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn02.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn03.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn04.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn05.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn06.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn07.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn08.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn09.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="newborn" role="button" tabindex="0"><img src="images/newborn/newborn10.jpg" alt="Newborn baby session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood01.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood02.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood03.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood04.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood05.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood06.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood07.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood08.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood09.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="motherhood" role="button" tabindex="0"><img src="images/motherhood/motherhood10.jpg" alt="Motherhood session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday01.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday02.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday03.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday04.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday05.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday06.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday07.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday08.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday09.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="birthday" role="button" tabindex="0"><img src="images/birthday/birthday10.jpg" alt="Birthday session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family01.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family02.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family03.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family04.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family05.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family06.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family07.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family08.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family09.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="family" role="button" tabindex="0"><img src="images/family/family10.jpg" alt="Family session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor01.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor02.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor03.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor04.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor05.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor06.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor07.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor08.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor09.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
+      <div data-category="outdoor" role="button" tabindex="0"><img src="images/outdoor/outdoor10.jpg" alt="Outdoor session — Tinyy Steps Studio" fetchpriority="low" decoding="async" loading="lazy" onerror="this.closest('div').classList.add('missing')"></div>
     </div>
     <p class="gallery-empty" id="galleryEmpty" style="display:none;">More photos from this category are coming soon — follow us on Instagram to see the latest sessions.</p>
     <div class="gallery-cta">
@@ -1007,23 +1020,23 @@
     <div class="insta-grid">
       <!-- Instagram feed - add your images to images/instagram/ folder as instagram01.jpg through instagram05.jpg -->
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/instagram/instagram01.jpg" alt="Instagram post">
+        <img src="images/instagram/instagram01.jpg" alt="Instagram post" loading="lazy" decoding="async" fetchpriority="low" onerror="this.closest('a').classList.add('missing')">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/instagram/instagram02.jpg" alt="Instagram post">
+        <img src="images/instagram/instagram02.jpg" alt="Instagram post" loading="lazy" decoding="async" fetchpriority="low" onerror="this.closest('a').classList.add('missing')">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/instagram/instagram03.jpg" alt="Instagram post">
+        <img src="images/instagram/instagram03.jpg" alt="Instagram post" loading="lazy" decoding="async" fetchpriority="low" onerror="this.closest('a').classList.add('missing')">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/instagram/instagram04.jpg" alt="Instagram post">
+        <img src="images/instagram/instagram04.jpg" alt="Instagram post" loading="lazy" decoding="async" fetchpriority="low" onerror="this.closest('a').classList.add('missing')">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
       <a class="insta-tile" href="https://www.instagram.com/tinyysteps_studio/" target="_blank" rel="noopener">
-        <img src="images/instagram/instagram05.jpg" alt="Instagram post">
+        <img src="images/instagram/instagram05.jpg" alt="Instagram post" loading="lazy" decoding="async" fetchpriority="low" onerror="this.closest('a').classList.add('missing')">
         <span class="insta-badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg></span>
       </a>
     </div>
@@ -1303,7 +1316,7 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo"><img src="images/logo-dark.png" alt="Tinyy Steps Studio logo"></div>
+      <div class="footer-logo"><img src="images/logo-dark.png" alt="Tinyy Steps Studio logo" loading="lazy" decoding="async"></div>
       <p>A home-styled studio in Surat for newborn, motherhood, birthday and family sessions — every session shaped around you.</p>
     </div>
     <div>
@@ -1424,11 +1437,15 @@
     });
   });
 
-  // Slots without a matching uploaded photo fail to load and get marked
-  // "missing" (see onerror on each <img>); give broken images a moment
-  // to fail before doing the first filter pass.
-  window.addEventListener('load', function(){ applyFilter('all'); });
-  setTimeout(function(){ applyFilter('all'); }, 400);
+  // Missing images hide themselves instantly via the onerror handler + the
+  // .missing CSS rule — no need to wait for anything to filter correctly.
+  // Run once immediately so the page is interactive right away.
+  applyFilter('all');
+
+  // Lightweight safety net: only refreshes the "no photos yet" empty-state
+  // message/count after slow images settle — doesn't block or delay anything.
+  var settleTimer = setTimeout(function(){ applyFilter(document.querySelector('.filter-pill.active').getAttribute('data-filter')); }, 1200);
+  window.addEventListener('load', function(){ clearTimeout(settleTimer); });
 
   initLightbox(items);
 })();
