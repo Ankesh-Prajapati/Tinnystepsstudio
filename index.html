@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-loading">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,6 +109,71 @@
   button{font-family:inherit;}
   .wrap{max-width:1320px;margin:0 auto;padding:0 32px;}
   ::selection{background:var(--blush-deep);color:var(--white);}
+
+  /* ---------- Page loader ---------- */
+  html.is-loading{overflow:hidden;}
+  #siteLoader{
+    position:fixed;inset:0;z-index:10000;
+    background:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    transition:opacity .6s ease, visibility .6s ease;
+  }
+  #siteLoader.loader-hidden{opacity:0;visibility:hidden;pointer-events:none;}
+  .loader-blob{position:absolute;border-radius:50%;filter:blur(2px);}
+  .loader-blob-a{width:340px;height:340px;background:var(--peach);opacity:.55;top:-90px;left:-110px;}
+  .loader-blob-b{width:280px;height:280px;background:var(--sage);opacity:.4;bottom:-100px;right:-90px;}
+  .loader-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .loader-ring-wrap{
+    position:relative;width:172px;height:172px;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;animation:loader-ring-wrap-in .7s ease forwards;
+  }
+  @keyframes loader-ring-wrap-in{
+    0%{opacity:0;transform:scale(.9);}
+    100%{opacity:1;transform:scale(1);}
+  }
+  .loader-ring{
+    position:absolute;inset:0;border-radius:50%;
+    border:3px solid transparent;
+    border-top-color:var(--rose-deep);
+    border-right-color:var(--rose-deep);
+    animation:loader-spin 1.3s cubic-bezier(.5,0,.5,1) infinite;
+  }
+  .loader-ring--outer{
+    inset:-16px;
+    border-top-color:var(--sage-deep);
+    border-left-color:var(--sage-deep);
+    animation-duration:1.9s;
+    animation-direction:reverse;
+    opacity:.75;
+  }
+  @keyframes loader-spin{
+    to{transform:rotate(360deg);}
+  }
+  .loader-logo{
+    height:88px;width:auto;object-fit:contain;position:relative;z-index:1;
+    animation:loader-logo-in 1s ease forwards;
+  }
+  @keyframes loader-logo-in{
+    0%{opacity:0;transform:scale(.85);}
+    100%{opacity:1;transform:scale(1);}
+  }
+  .loader-tagline{
+    margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:17px;
+    color:var(--rose-deep);opacity:0;max-width:260px;line-height:1.4;
+    animation:loader-tagline-in .8s ease forwards;animation-delay:.35s;
+  }
+  @keyframes loader-tagline-in{
+    0%{opacity:0;transform:translateY(6px);}
+    100%{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .loader-logo,.loader-tagline,.loader-ring-wrap{animation:none;opacity:1;transform:none;}
+    .loader-ring{animation:none;border-color:var(--rose-deep);opacity:.4;}
+    .loader-ring--outer{border-color:var(--sage-deep);}
+    #siteLoader{transition:opacity .3s ease;}
+  }
 
   /* ---------- Accessibility: skip link ---------- */
   .skip-link{
@@ -780,6 +845,19 @@
 </head>
 <body>
 
+<div id="siteLoader" aria-hidden="true">
+  <div class="loader-blob loader-blob-a"></div>
+  <div class="loader-blob loader-blob-b"></div>
+  <div class="loader-inner">
+    <div class="loader-ring-wrap">
+      <div class="loader-ring loader-ring--outer"></div>
+      <div class="loader-ring"></div>
+      <img src="images/logo-light.png" alt="" class="loader-logo">
+    </div>
+    <p class="loader-tagline">From first kicks to first birthdays 🤍</p>
+  </div>
+</div>
+
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <header>
@@ -825,7 +903,7 @@
     <div class="polaroid-stack">
       <div class="polaroid p1">
         <img src="images/hero/polaroid1.jpg" alt="Newborn baby resting softly in a knit wrap" loading="eager" fetchpriority="high" decoding="async">
-        <div class="polaroid-caption">tiny steps, big love</div>
+        <div class="polaroid-caption">tinyy steps, big love</div>
       </div>
       <div class="polaroid p2">
         <img src="images/hero/polaroid2.jpg" alt="Little girl smiling shyly at her outdoor picnic session" loading="eager" fetchpriority="high" decoding="async">
@@ -1681,6 +1759,27 @@ function initLightbox(allItems){
   });
 
   sections.forEach(function(section){ observer.observe(section); });
+})();
+
+(function(){
+  var loader = document.getElementById('siteLoader');
+  var html = document.documentElement;
+  if (!loader) return;
+
+  var minShown = new Promise(function(resolve){ setTimeout(resolve, 1100); });
+  var pageReady = new Promise(function(resolve){
+    if (document.readyState === 'complete'){ resolve(); }
+    else { window.addEventListener('load', resolve); }
+  });
+
+  Promise.all([minShown, pageReady]).then(function(){
+    loader.classList.add('loader-hidden');
+    html.classList.remove('is-loading');
+    loader.addEventListener('transitionend', function handler(){
+      loader.style.display = 'none';
+      loader.removeEventListener('transitionend', handler);
+    });
+  });
 })();
 </script>
 
